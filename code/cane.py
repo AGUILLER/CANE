@@ -114,7 +114,8 @@ class Model:
         p7 = tf.reduce_sum(tf.multiply(self.N_B, self.convA), 1)
         p7 = tf.log(tf.sigmoid(p7) + 0.001)
 
-        p8 = tf.reduce_sum(tf.multiply(self.N_B, self.convNeg), 1)
+        # p8 = tf.reduce_sum(tf.multiply(self.N_B, self.convNeg), 1)
+        p8 = tf.reduce_sum(tf.multiply(self.N_NEG, self.convA), 1)
         p8 = tf.log(tf.sigmoid(-p8) + 0.001)
 
         rho1 = self.rho1
